@@ -56,8 +56,8 @@ class Post extends Resource
                 ->rules('required', 'image', 'max:4096'),
             Date::make('Date'),
             Slug::make('Slug')->from('title')->sortable(),
-            BelongsToMany::make('Categories')->searchable(),
-            BelongsToMany::make('Tags')->searchable(),
+            BelongsToMany::make('Categories')->searchable()->sortable(),
+            BelongsToMany::make('Tags')->searchable()->sortable(),
         ];
     }
 

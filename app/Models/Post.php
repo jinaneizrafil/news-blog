@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Observers\PostObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
+#[ObservedBy([PostObserver::class])]
 class Post extends Model
 {
+    use SoftDeletes;
     protected $casts = [
         'date' => 'datetime',
     ];

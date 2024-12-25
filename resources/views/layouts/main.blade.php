@@ -12,9 +12,9 @@
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
     @include('partials.header')
-    <main class=" pt-[60px]">
+    <main class="flex-grow pt-[60px]">
         @yield('content')
     </main>
     @include('partials.footer')

@@ -6,7 +6,7 @@
             date|category
 
         </div>
-        {{-- <img src="{{ asset('images/book1.jpg') }}" > --}}
+        {{-- <img src="{{ asset('images/image.jpg') }}" > --}}
         <p class="content text-[20px]">content</p>
     </div>
 </div>

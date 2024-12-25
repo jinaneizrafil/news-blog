@@ -8,10 +8,10 @@
                  &copy; {{ date('Y') }}
              </div>
 
-             <div class="flex lg:ml-auto space-x-5 text-white">
-                 <a href="#" class="terms-link ">Terms & Conditions</a>
-                 <a href="#" class="terms-link ">Privacy Policy</a>
-                 <a href="#" class="terms-link">Cookies Policy</a>
+             <div class="flex lg:ml-auto space-x-5 text-white ">
+                 <a href="#" class="terms-link hover:underline">Terms & Conditions</a>
+                 <a href="#" class="terms-link hover:underline">Privacy Policy</a>
+                 <a href="#" class="terms-link hover:underline">Cookies Policy</a>
              </div>
          </div>
 

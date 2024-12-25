@@ -50,7 +50,7 @@ window.addEventListener('resize', updateScroll);"
                     <a href="/#policits" class="side-bar-text" data-close-sidebar>Politics</a>
                 </li>
                 <li class="inline-flex py-2 px-3">
-                    <a href="/#beauty" class="side-bar-text" data-close-sidebar>Politics</a>
+                    <a href="/#tech" class="side-bar-text" data-close-sidebar>Tech</a>
                 </li>
 
 
@@ -66,16 +66,16 @@ window.addEventListener('resize', updateScroll);"
                 </li>
 
                 <li class="inline-flex py-2 px-3 header-i">
-                    <a href="/#sport">Authorship</a>
+                    <a href="/#sport">Tech</a>
                 </li>
                 <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#health">Media</a>
+                    <a href="/#health">Politics</a>
                 </li>
                 <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#policits">Media</a>
+                    <a href="/#policits">Sport</a>
                 </li>
                 <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#beauty">Beauty</a>
+                    <a href="/#beauty">Health</a>
                 </li>
 
 

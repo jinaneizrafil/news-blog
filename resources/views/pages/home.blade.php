@@ -7,7 +7,7 @@
 @section('content')
     <div class="categories">
         @foreach ($categories as $category)
-            @include('components.home.category', ['category' => $category])
+            @include('pages.category', ['category' => $category])
         @endforeach
     </div>
 @endsection

@@ -14,7 +14,7 @@
 
 <body>
     @include('partials.header')
-    <main class="">
+    <main class=" pt-[60px]">
         @yield('content')
     </main>
     @include('partials.footer')

@@ -10,7 +10,9 @@ Route::get('/', [HomeController::class, 'index']);
 // Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 
-
+Route::get('/post', function () {
+    return view('pages.post');
+});
 // A test route for debugging purposes
 Route::get('/test', function () {
     \App\Models\Post::find(5)->delete();

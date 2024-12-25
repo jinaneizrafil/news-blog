@@ -14,7 +14,7 @@ window.addEventListener('resize', updateScroll);"
             {{-- <a href="/"><img src="{{ asset('icons/header-logo.svg') }}" class="header-logo" alt="Logo"></a> --}}
             <a href="/">
                 <div class="grid grid-cols-1 logo-name">
-                    logo name
+                    NEWS
                 </div>
             </a>
 

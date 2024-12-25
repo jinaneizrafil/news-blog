@@ -50,10 +50,12 @@ header {
     right: 0;
     left: 0;
     z-index: 100;
-    height: auto;
+    height: 60px;
     padding-top: 15px;
     padding-bottom: 15px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.14);
+    display: flex;
+    align-items: center;
 
     background: white;
 
@@ -120,6 +122,8 @@ header {
     }
 
     .header-inner {
+    
+        width: 100%;
         .logo-name {
             color: $text-color;
             font-weight: 800;
@@ -147,4 +151,3 @@ header {
         align-items: center;
     }
 }
-

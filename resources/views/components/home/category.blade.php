@@ -5,12 +5,16 @@
             <a href="#" class="view-more hover:underline">View More</a>
         </div>
 
-        <div class="grid grid-cols-12 gap-5">
+        <div class="f-carousel" id="carousel" x-init="window.Functions.initCarousel($el)">
             @foreach ($category->posts as $post)
-               @component('components.home.post', ['post' => $post])
-
-               @endcomponent
+                <div class="f-carousel__slide">
+                    <div class="col-span-12 sm:col-span-6 md:col-span-4">
+                        @component('components.home.post', ['post' => $post])
+                        @endcomponent
+                    </div>
+                </div>
             @endforeach
         </div>
+
     </div>
 </div>

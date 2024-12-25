@@ -77,7 +77,9 @@ window.addEventListener('resize', updateScroll);"
                 <li class="inline-flex py-2 px-3 header-i ">
                     <a href="/#beauty">Health</a>
                 </li>
-
+                <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
+                    <a href="/#beauty">Contact Us</a>
+                </li>
 
             </ul>
         </nav>

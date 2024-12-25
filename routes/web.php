@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 // Root route for the homepage
-Route::get('/', [HomeController::class, 'render']);
+Route::get('/', [HomeController::class, 'index']);
 
-// Route for viewing posts in a specific category
+// Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
+
 
 
 // A test route for debugging purposes

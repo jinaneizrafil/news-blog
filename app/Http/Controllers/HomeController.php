@@ -12,4 +12,10 @@ class HomeController extends Controller
     {
         return view('pages.home');
     }
+    public function index()
+    {
+        $categories = Category::with('posts')->get();
+        return view('pages.home', compact('categories'));
+    }
 }
+

@@ -5,12 +5,9 @@
 @endsection
 
 @section('content')
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-@component('components.home-categories.sport')
-
-@endcomponent
-    {{-- @component('components.home-sport', ['category' => $category, 'posts' => $categoryPosts])
-    @endcomponent --}}
+    <div class="categories">
+        @foreach ($categories as $category)
+            @include('components.home.category', ['category' => $category])
+        @endforeach
+    </div>
 @endsection

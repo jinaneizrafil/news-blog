@@ -1,11 +1,13 @@
-<h1>{{ $category->name }}</h1>
+<h1>
+    {{ $category->name }}</h1>
 <div class="posts">
-    @foreach ($category->posts as $post)
-        <div class="post">
-            <a href="{{ route('post.show', $post->slug) }}">
-                <h3>{{ $post->title }}</h3>
-            </a>
-         
-        </div>
-    @endforeach
+    <div class="grid grid-cols-12 gap-5">
+        @foreach ($category->posts as $post)
+            <div class="col-span-12 md:col-span-6 ">
+              @component('components.home.post',['post'=>$post])
+
+              @endcomponent
+            </div>
+        @endforeach
+    </div>
 </div>

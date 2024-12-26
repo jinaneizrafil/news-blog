@@ -13,6 +13,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/post', function () {
     return view('pages.post');
 });
+Route::get('/category', function () {
+    return view('pages.category');
+});
 // A test route for debugging purposes
 Route::get('/test', function () {
     \App\Models\Post::find(5)->delete();

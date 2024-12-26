@@ -13,6 +13,6 @@ class PostController extends Controller
     $post = Post::where('slug', $slug)->firstOrFail();
 
     // Return the post details view
-    return view('components.home.category', compact('post'));
+    return view('components.category', compact('post'));
 }
 }

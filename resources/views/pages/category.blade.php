@@ -1,12 +1,11 @@
-<div class="container mx-auto  py-8 mt-16">
-    <div class="main-container">
+@extends('layouts.main')
 
-        <div class="">
+@section('head')
+    <title>category title</title>
+@endsection
 
-            @component('components.home.category',['category' => $category] )
-            @endcomponent
+@section('content')
+   @component('components.category')
 
-
-        </div>
-    </div>
-</div>
+   @endcomponent
+@endsection

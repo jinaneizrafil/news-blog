@@ -8,4 +8,5 @@
         </div>
     </div>
     <div class="content pl-8">{{ $post->content }}</div>
+
 </div>

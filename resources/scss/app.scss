@@ -20,28 +20,20 @@ html {
     scroll-behavior: smooth !important;
 }
 body {
-    min-height: 100vh;
-    margin: 0;
-    height: 100%;
-    background-color: #fafafa;
-    scroll-behavior: smooth !important;
-    display: flex;
-    flex-direction: column;
+    @apply min-h-screen m-0 h-full bg-[#fafafa] scroll-smooth flex flex-col;
 }
 
 $text-size: 17px;
 $text-color: #333333;
 
 .main-container {
-    padding-left: 60px;
-    padding-right: 60px;
+    @apply pl-[60px] pr-[60px];
+
     @media (max-width: $lg) {
-        padding-left: 15px;
-        padding-right: 15px;
+        @apply pl-[15px] pr-[15px];
     }
     @media (max-width: $md) {
-        padding-left: 10px;
-        padding-right: 10px;
+        @apply pl-[10px] pr-[10px];
     }
 }
 
@@ -54,29 +46,22 @@ header {
     }
 
     .sidebar {
-        top: -50px; //hyde 7atyta hyk kermel te3la l sidebar la fw2
-        position: fixed;
-        left: 0;
-        width: 40%;
-        height: 100%;
-        .sidebar-logo {
-            width: 70px;
-            height: auto;
-            padding-bottom: 15px;
-            @media (max-width: $sm) {
-                width: 60px;
-            }
-        }
-
+        @apply fixed w-[40%] h-full top-[-50px] left-0 pt-[70px];
         background-color: #d0dfe0;
         z-index: 999;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         overflow-y: auto;
-        padding-top: 70px;
+        .sidebar-logo {
+            @apply w-[70px] h-auto pb-[15px];
+
+            @media (max-width: $sm) {
+                @apply w-[60px];
+            }
+        }
+
         @media (max-width: $md) {
-            width: 80%;
-            height: 150%;
+            @apply w-[80%] h-[150%];
         }
         .side-bar-text {
             font-size: $text-size;
@@ -87,7 +72,6 @@ header {
     .sidebar.open {
         transform: translateX(0);
     }
-    //hayde 7atyta minimum width ye3ne kel screen fw2 l md btkoun l sidebar me5etfye
     @media (min-width: $md) {
         .sidebar {
             display: none;
@@ -111,7 +95,7 @@ header {
     }
 
     .header-inner {
-        width: 100%;
+        @apply w-full flex justify-between items-center;
         .logo-name {
             color: $text-color;
             font-weight: 800;
@@ -133,10 +117,6 @@ header {
                 width: 30px;
             }
         }
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
 }
 .title {

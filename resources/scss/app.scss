@@ -140,32 +140,30 @@ header {
     }
 }
 .title {
-    color: $text-color;
-    // color: #13255f;
-    font-size: 30px;
-    opacity: 0.99;
-
-    font-weight: 700;
-    padding-bottom: 15px;
+    @apply text-text-color text-[30px] font-[700] pb-[15px];
     @media (max-width: $lg) {
         font-size: 30px;
     }
     @media (max-width: $md) {
-        font-size: 20px;
-
+        font-size: 25px;
         padding-bottom: 10px;
-    }
-    @media (max-width: $sm) {
-        font-size: 10px;
     }
 }
 .text {
     @apply text-text-color;
 }
 .view-more {
-    @apply text-text-color font-semibold;
+    @apply text-text-color font-semibold text-[12px] md:text-[17px];
 }
 #carousel {
     --f-carousel-spacing: 10px;
     --f-carousel-slide-width: calc(calc(100% - 20px) / 3);
+
+    @media (max-width: $md) {
+        --f-carousel-spacing: 5px;
+        --f-carousel-slide-width: calc(calc(100% - 5px) / 2);
+    }
+    @media (max-width: $sm) {
+        --f-carousel-slide-width: 100%;
+    }
 }

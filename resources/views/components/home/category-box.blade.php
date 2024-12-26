@@ -10,7 +10,7 @@
                 @foreach ($category->posts as $post)
                     <div class="f-carousel__slide">
                         <div class="col-span-12 sm:col-span-6 md:col-span-4">
-                            @component('components.home.post', ['post' => $post])
+                            @component('components.home.post', ['post' => $post, 'category' => $category])
                             @endcomponent
                         </div>
                     </div>

@@ -6,10 +6,14 @@
 
             <div class="sub-title flex text-gray-500 pb-7">
 
-                {{ $post->date }}|category
+                {{ $post->date }}|{{ $category->name }}
 
             </div>
+            <img src="{{ url('storage/' . $post->image) }}">
+
+            {{-- <div class="content pl-8">{{ $post->content }}</div> --}}
+
         </div>
-        <div class="content pl-8">{{ $post->content }}</div>
+
     </a>
 </div>

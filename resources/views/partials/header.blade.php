@@ -1,7 +1,8 @@
 <header x-data="{ scrolled: false, sidebarOpen: false }" @click.away="sidebarOpen = false" x-init="const updateScroll = () => {
     const screenWidth = window.innerWidth;
     const scrollThreshold = screenWidth <= 768 ? (screenWidth < 400 ? 0 : 50) : 55;
-    scrolled = window.scrollY > scrollThreshold;
+    scrolled = window.scrollY >
+        scrollThreshold;
 };
 
 updateScroll();
@@ -60,28 +61,19 @@ window.addEventListener('resize', updateScroll);"
 
         <!-- Main Navigation -->
         <nav class="main-navigation hidden md:flex">
-            <ul class="flex flex-row gap-2">
-                <li class="inline-flex py-2 px-3 header-i">
-                    <a href="/">Home</a>
-                </li>
-
-                <li class="inline-flex py-2 px-3 header-i">
-                    <a href="/#sport">Tech</a>
-                </li>
-                <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#health">Politics</a>
-                </li>
-                <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#policits">Sport</a>
-                </li>
-                <li class="inline-flex py-2 px-3 header-i ">
-                    <a href="/#beauty">Health</a>
-                </li>
-                <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
-                    <a href="/#beauty">Contact Us</a>
-                </li>
-
-            </ul>
+            <li class="inline-flex py-2 px-3 header-i">
+                <a href="/">Home</a>
+            </li>
+            @isset($categories)
+                @foreach ($categories as $category)
+                    <li class="inline-flex py-2 px-3 header-i">
+                        <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
+                    </li>
+                @endforeach
+            @endisset
+            <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
+                <a href="/#beauty">Contact Us</a>
+            </li>
         </nav>
         <!-- End Main Navigation -->
     </div>

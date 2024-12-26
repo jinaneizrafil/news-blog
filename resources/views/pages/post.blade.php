@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-   @component('components.post',["post"=>$post])
+   @component('components.post',['post' => $post])
 
    @endcomponent
 @endsection

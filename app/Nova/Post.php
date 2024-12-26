@@ -71,7 +71,8 @@ class Post extends Resource
                 ->rules('required'),
 
             Tag::make('Categories'),
-            BelongsToMany::make('Tags')->searchable()->sortable(),
+            Tag::make('Tags'),
+            // BelongsToMany::make('Tags')->searchable()->sortable(),
 
 
         ];

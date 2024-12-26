@@ -28,22 +28,10 @@ body {
     display: flex;
     flex-direction: column;
 }
-$big-title-size: 35px;
-$sub-title-size: 19px;
-$text-size: 17px;
-$responsive-md-big-title-size: 18px;
-$responsive-md-sub-title-size: 14px;
-$responsive-md-text-size: 12px;
 
-$responsive-sm-text-size: 8px;
-$padding-top-component: 70px;
-$padding-bottom-component: 70px;
-$responsive-md-padding-top-component: 50px;
-$responsive-md-padding-bottom-component: 50px;
-$responsive-sm-padding-top-component: 20px;
-$responsive-sm-padding-bottom-component: 20px;
+$text-size: 17px;
 $text-color: #333333;
-// $text-color: red;
+
 .main-container {
     padding-left: 60px;
     padding-right: 60px;
@@ -58,23 +46,11 @@ $text-color: #333333;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    @apply fixed top-0 right-0 left-0  h-[60px] pt-[15px] pb-[15px] shadow-[0_0_40px_rgba(0,0,0,0.14)] flex items-center bg-white;
     z-index: 100;
-    height: 60px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.14);
-    display: flex;
-    align-items: center;
-    // background-color:#d0dfe0 ;
-    background: white;
 
     @media (max-width: $md) {
-        padding-top: 5px;
-        padding-bottom: 5px;
+        @apply pt-[5px] pb-[5px];
     }
 
     .sidebar {
@@ -192,7 +168,4 @@ header {
 #carousel {
     --f-carousel-spacing: 10px;
     --f-carousel-slide-width: calc(calc(100% - 20px) / 3);
-}
-
-footer {
 }

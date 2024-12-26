@@ -34,28 +34,19 @@ window.addEventListener('resize', updateScroll);"
         <div class="sidebar md:hidden" :class="{ 'open': sidebarOpen }">
             {{-- <a href="/"><img src="{{ asset('icons/header-logo.svg') }}" class="sidebar-logo px-3"
                     alt="Logo"></a> --}}
-            <ul class="flex flex-col gap-2">
-
-                <li class="inline-flex py-2 px-3">
-                    <a href="/#welcome-to-my-site" class="side-bar-text " data-close-sidebar>Home</a>
-                </li>
-
-
-                <li class="inline-flex py-2 px-3">
-                    <a href="/#sport" class="side-bar-text" data-close-sidebar>Sport</a>
-                </li>
-                <li class="inline-flex py-2 px-3">
-                    <a href="/#health" class="side-bar-text" data-close-sidebar>Health</a>
-                </li>
-                <li class="inline-flex py-2 px-3">
-                    <a href="/#policits" class="side-bar-text" data-close-sidebar>Politics</a>
-                </li>
-                <li class="inline-flex py-2 px-3">
-                    <a href="/#tech" class="side-bar-text" data-close-sidebar>Tech</a>
-                </li>
-
-
-            </ul>
+            <div class="flex flex-col gap-2 py-2 px-3">
+                <a href="/">Home</a>
+            </div>
+            @isset($categories)
+                @foreach ($categories as $category)
+                    <div class="flex flex-col gap-2 py-2 px-3">
+                        <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
+                    </div>
+                @endforeach
+            @endisset
+            <div class="flex flex-col gap-2 py-2 px-3 bg-[#135D66] text-white hover:bg-[#4d99a3]">
+                <a href="/">Contact Us</a>
+            </div>
         </div>
         <!-- End Sidebar -->
 
@@ -72,7 +63,7 @@ window.addEventListener('resize', updateScroll);"
                 @endforeach
             @endisset
             <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
-                <a href="/#beauty">Contact Us</a>
+                <a href="/#">Contact Us</a>
             </li>
         </nav>
         <!-- End Main Navigation -->

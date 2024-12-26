@@ -4,11 +4,11 @@
 
          <div class="terms-footer flex flex-col lg:flex-row ">
 
-             <div class="text-white">
+             <div class="text-white text-[13px] md:text-[16px]">
                  &copy; {{ date('Y') }}
              </div>
 
-             <div class="flex lg:ml-auto space-x-5 text-white ">
+             <div class="flex lg:ml-auto space-x-5 text-white text-[13px] md:text-[16px] ">
                  <a href="#" class="terms-link hover:underline">Terms & Conditions</a>
                  <a href="#" class="terms-link hover:underline">Privacy Policy</a>
                  <a href="#" class="terms-link hover:underline">Cookies Policy</a>

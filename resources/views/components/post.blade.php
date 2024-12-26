@@ -2,7 +2,7 @@
 <a href="{{ route('post.show', $post->slug) }}">
 <div class="post">
     <div class="main-container">
-        <h1 class="text text-[50px] font-bold pb-3">{{ $post->title }}</h1>
+        <h1 class="text text-[45px] font-bold pb-3">{{ $post->title }}</h1>
         <div class="sub-title flex text-gray-500 pb-7">
 
             date|category

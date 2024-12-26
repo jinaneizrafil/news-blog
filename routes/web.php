@@ -3,19 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 
-// Root route for the homepage
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
+// Route for category page
+Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('category.show');
 
-
-Route::get('/post', function () {
-    return view('pages.post');
-});
-Route::get('/category', function () {
-    return view('pages.category');
-});
+// Route for single post
+Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
 // A test route for debugging purposes
 Route::get('/test', function () {
     \App\Models\Post::find(5)->delete();

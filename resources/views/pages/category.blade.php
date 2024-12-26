@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('head')
-    <title>category title</title>
+    <title>{{ $category->name }}</title>
 @endsection
 
 @section('content')
-   @component('components.category')
+   @component('components.category',['category'=>$category])
 
    @endcomponent
 @endsection

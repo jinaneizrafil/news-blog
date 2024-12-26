@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-    <title>post title</title>
+    <title>{{ $post->title }}</title>
 @endsection
 
 @section('content')

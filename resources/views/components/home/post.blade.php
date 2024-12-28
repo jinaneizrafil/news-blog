@@ -6,7 +6,7 @@
 
             <div class="sub-title flex text-gray-500 pb-7 text-[10px] md:text-[13px]">
 
-                {{ $post->date }}|{{ $category->name }}
+                {{ $post->date->format('d-m-Y') }}|{{ $category->name }}
 
             </div>
             <img src="{{ url('storage/' . $post->image) }}">

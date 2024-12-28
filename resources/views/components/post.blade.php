@@ -7,7 +7,7 @@
                 {{ $post->date }} | category
 
             </div>
-           <img src="{{ url('storage/' . $post->image) }}" class="h-[250px] mx-auto">
+            <img src="{{ url('storage/' . $post->image) }}" class="h-[250px] mx-auto">
             <p class="content text-[20px]">{{ $post->content }}</p>
         </div>
     </div>

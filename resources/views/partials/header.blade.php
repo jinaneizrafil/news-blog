@@ -10,15 +10,14 @@ updateScroll();
 window.addEventListener('scroll', updateScroll);
 window.addEventListener('resize', updateScroll);"
     :class="{ 'header-compact': scrolled }">
-    <div class="header-inner main-container">
+    <div class="header-inner main-container flex justify-between items-center">
         <div class="flex items-center flex-row gap-4">
             {{-- <a href="/"><img src="{{ asset('icons/header-logo.svg') }}" class="header-logo" alt="Logo"></a> --}}
             <a href="/">
-                <div class="grid grid-cols-1 logo-name">
+                <div class="grid grid-cols-1 logo-name ">
                     NEWS
                 </div>
             </a>
-
         </div>
 
         <!-- Show the menu icon on screens less than md -->
@@ -37,13 +36,11 @@ window.addEventListener('resize', updateScroll);"
             <div class="flex flex-col gap-2 py-2 px-3">
                 <a href="/">Home</a>
             </div>
-            @isset($categories)
-                @foreach ($categories as $category)
-                    <div class="flex flex-col gap-2 py-2 px-3">
-                        <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
-                    </div>
-                @endforeach
-            @endisset
+            @foreach (\App\Models\Category::all() as $category)
+                <div class="flex flex-col gap-2 py-2 px-3">
+                    <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
+                </div>
+            @endforeach
             <div class="flex flex-col gap-2 py-2 px-3 bg-[#135D66] text-white hover:bg-[#4d99a3]">
                 <a href="/">Contact Us</a>
             </div>
@@ -53,19 +50,25 @@ window.addEventListener('resize', updateScroll);"
         <!-- Main Navigation -->
         <nav class="main-navigation hidden md:flex">
             <li class="inline-flex py-2 px-3 header-i">
-                <a href="/">Home</a>
+                <a class="{{ \Route::is('home') ? 'underline' : '' }}" href="/">Home</a>
             </li>
-            @isset($categories)
-                @foreach ($categories as $category)
+            <div class="middle-menu ">
+                @foreach (\App\Models\Category::all() as $category)
                     <li class="inline-flex py-2 px-3 header-i">
-                        <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
+                        <a class="{{ \Route::is('category.show') && $category->slug == request()->slug ? 'underline' : '' }}"
+                            href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
                     </li>
                 @endforeach
-            @endisset
-            <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
+            </div>
+            {{-- <li class="inline-flex py-2 px-3  bg-[#135D66] text-white hover:bg-[#4d99a3]">
                 <a href="/#">Contact Us</a>
-            </li>
+            </li> --}}
         </nav>
+        <div class="hidden md:flex">
+            <a href="/" class="py-2 px-3 bg-[#135D66] text-white hover:bg-[#4d99a3]">
+                Contact Us
+            </a>
+        </div>
         <!-- End Main Navigation -->
     </div>
 </header>

@@ -38,11 +38,11 @@ $text-color: #333333;
 }
 
 header {
-    @apply fixed top-0 right-0 left-0  h-[60px] pt-[15px] pb-[15px] shadow-[0_0_40px_rgba(0,0,0,0.14)] flex items-center bg-white;
+    @apply fixed top-0 right-0 left-0  h-[60px] pt-[15px] pb-[15px] shadow-[0_0_40px_rgba(0,0,0,0.14)]  bg-white;
     z-index: 100;
 
     @media (max-width: $md) {
-        @apply pt-[5px] pb-[5px];
+        @apply pt-[5px] pb-[5px] flex items-center;
     }
 
     .sidebar {
@@ -95,8 +95,9 @@ header {
     }
 
     .header-inner {
-        @apply w-full flex justify-between items-center;
+        @apply w-full flex  items-center px-4;
         .logo-name {
+            @apply text-left;
             color: $text-color;
             font-weight: 800;
             font-size: 17px;
@@ -107,6 +108,7 @@ header {
                 font-size: 12px;
             }
         }
+
         .header-logo {
             width: 45px;
             height: auto;

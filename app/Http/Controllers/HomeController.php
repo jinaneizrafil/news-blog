@@ -7,7 +7,7 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
- 
+
     public function render()
     {
         return view('pages.home');
@@ -18,4 +18,3 @@ class HomeController extends Controller
         return view('pages.home', compact('categories'));
     }
 }
-

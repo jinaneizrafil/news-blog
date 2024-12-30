@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Category extends Resource
@@ -48,6 +49,9 @@ class Category extends Resource
             Text::make('Name')->sortable(),
             Slug::make('Slug')->from('name')->sortable(),
             BelongsToMany::make('Posts'),
+            Boolean::make('Show on Home', 'show_on_home'),
+            Boolean::make('Show on Header', 'show_on_header'),
+            // Boolean::make('Show on Category Page', 'show_on_category_page'),
         ];
     }
 

@@ -73,6 +73,8 @@ class Post extends Resource
             Tag::make('Categories'),
             Tag::make('Tags'),
             // BelongsToMany::make('Tags')->searchable()->sortable(),
+            Boolean::make('Show on Home', 'show_on_home'),
+            Boolean::make('Show on Category Page', 'show_on_category_page'),
 
 
         ];

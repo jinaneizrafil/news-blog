@@ -23,9 +23,9 @@ class CategoryController extends Controller
     {
 
         $category = Category::where('slug', $slug)->firstOrFail();
-        $postsForCategoryPage = Post::where('category_id', $category->id)
-            ->where('show_on_category_page', true)
-            ->get();
+        // $postsForCategoryPage = Post::where('category_id', $category->id)
+        //     ->where('show_on_category_page', true)
+        //     ->get();
 
         $posts = $category->posts()->paginate(2);
 

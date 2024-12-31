@@ -8,16 +8,18 @@ use App\Models\Post;
 class HomeController extends Controller
 {
 
-    public function render()
-    {
-        return view('pages.home');
-    }
+    // public function render()
+    // {
+    //     return view('pages.home');
+    // }
     public function index()
     {
-        // $categories = Category::with('posts')->get();
-        $categories = Category::where('show_on_home', true)->get();
-        // $categoriesForHeader = Category::where('show_on_home', true)->get();
-        $postsForHome = Post::where('show_on_home', true)->get();
+        $categories = Category::where('show_on_home', true)
+            ->with(['posts' => function ($query) {
+                $query->where('show_on_home', true);
+            }])
+            ->get();
+        // $posts = Post::where('show_on_home', true)->get();
         return view('pages.home', compact('categories'));
     }
 }

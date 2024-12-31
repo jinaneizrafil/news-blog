@@ -14,8 +14,9 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $categories = Category::with('posts')->get();
-        $categoriesForHome = Category::where('show_on_home', true)->get();
+        // $categories = Category::with('posts')->get();
+        $categories = Category::where('show_on_home', true)->get();
+        // $categoriesForHeader = Category::where('show_on_home', true)->get();
         $postsForHome = Post::where('show_on_home', true)->get();
         return view('pages.home', compact('categories'));
     }

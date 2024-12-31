@@ -36,7 +36,7 @@ window.addEventListener('resize', updateScroll);"
             <div class="flex flex-col gap-2 py-2 px-3">
                 <a href="/">Home</a>
             </div>
-            @foreach (\App\Models\Category::all() as $category)
+            @foreach ($headerCategories as $category)
                 <div class="flex flex-col gap-2 py-2 px-3">
                     <a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
                 </div>
@@ -53,7 +53,7 @@ window.addEventListener('resize', updateScroll);"
                 <a class="{{ \Route::is('home') ? 'underline' : '' }}" href="/">Home</a>
             </li>
             <div class="middle-menu ">
-                @foreach (\App\Models\Category::all() as $category)
+                @foreach ($headerCategories as $category)
                     <li class="inline-flex py-2 px-3 header-i">
                         <a class="{{ \Route::is('category.show') && $category->slug == request()->slug ? 'underline' : '' }}"
                             href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>

@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-   @component('components.post',['post' => $post])
-
-   @endcomponent
+  @component('components.post', ['post' => $post, 'categories' => $categories])
+@endcomponent
 @endsection

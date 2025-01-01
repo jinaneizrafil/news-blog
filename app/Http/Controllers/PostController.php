@@ -8,7 +8,11 @@ class PostController extends Controller
 {
     public function show($slug)
     {
-        $post = Post::where('slug', $slug)->firstOrFail();
-        return view('pages.post', compact('post'));
+        $post = Post::where('slug', $slug)->with('categories')->firstOrFail();
+        $categories = $post->categories;
+
+        return view('pages.post', compact('post', 'categories'));
+
+   
     }
 }

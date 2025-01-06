@@ -51,7 +51,7 @@ class Category extends Resource
             BelongsToMany::make('Posts'),
             Boolean::make('Show on Home', 'show_on_home'),
             Boolean::make('Show on Header', 'show_on_header'),
-            // Boolean::make('Show on Category Page', 'show_on_category_page'),
+            
         ];
     }
 

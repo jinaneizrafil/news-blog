@@ -1,6 +1,6 @@
 <div
     class="post p-2 col-span-4 bg-gray-100 rounded hover:bg-gray-200 hover:shadow-md focus:ring focus:ring-blue-300 transition">
-    <a href="{{ route('post.show', $post->slug) }}">
+    <a href="{{ route('post.show', ['slug' => $post->slug, 'category' => $category->slug]) }}">
         <div class="flex flex-col items-center pb-7">
             <div class="text hover:underline font-semibold flex text-center text-[16px] md:text-[18px]">{{ $post->title }}</div>
 

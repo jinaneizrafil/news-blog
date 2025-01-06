@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('show_on_home')->default(true);
-            $table->boolean('show_on_category_page')->default(true);
+            $table->boolean('show_on_home')->after('slug')->default(true);
+            $table->boolean('show_on_category_page')->after('show_on_home')->default(true);
         });
     }
 
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-           $table->dropColumn(['show_on_home', 'show_on_category_page']);
+            $table->dropColumn(['show_on_home', 'show_on_category_page']);
         });
     }
 };

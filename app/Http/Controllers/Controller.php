@@ -14,10 +14,10 @@ abstract class Controller extends BaseController
 
     public function __construct()
     {
-        // Share header categories with the partials.header view
-        view()->composer('partials.header', function ($view) {
-            $headerCategories = Category::where('show_on_header', true)->get();
-            $view->with('headerCategories', $headerCategories);
+        $headerCategories = cache()->remember('header', 600, function () {
+            return Category::where('show_on_header', true)->get();
         });
+
+        \View::share('headerCategories', $headerCategories);
     }
 }

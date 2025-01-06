@@ -4,11 +4,7 @@
             <h1 class="text text-[45px] font-bold pb-3">{{ $post->title }}</h1>
             <div class="sub-title flex text-gray-500 pb-7">
 
-                {{ $post->date }} | @foreach ($categories as $category)
-                    {{ $category->name }}@if (!$loop->last)
-                        ,
-                    @endif
-                @endforeach
+                {{ $post->date }} | {{ $category->name }}
 
             </div>
             <img src="{{ url('storage/' . $post->image) }}" class="h-[250px] mx-auto">
